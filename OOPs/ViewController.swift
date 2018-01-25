@@ -9,41 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //Created an object of the class Stack and assigned it to a constant "stackOfNumbers"
-        let stackOfNumbers = Stack()
-        
-        //Adding elements to stackOfNumbers
-        stackOfNumbers.add(element: 1)
-        stackOfNumbers.add(element: 2)
-        stackOfNumbers.add(element: 3)
-        stackOfNumbers.add(element: 4)
-        stackOfNumbers.add(element: 5)
-        
-        stackOfNumbers.printElementsOfTheStack()
-        
+        //Creating and object reference
+        let objectOfQueue = QueueWithStacks()
+        objectOfQueue.enqueue(element: 10)
+        objectOfQueue.enqueue(element: 20)
+        objectOfQueue.enqueue(element: 30)
        
-        print( stackOfNumbers.remove())
-        print(stackOfNumbers.remove())
-        stackOfNumbers.printElementsOfTheStack()
+        print (objectOfQueue.dequeue())
         
-        stackOfNumbers.add(element: 7)
-        stackOfNumbers.printElementsOfTheStack()
+        objectOfQueue.enqueue(element: 40)
+        objectOfQueue.enqueue(element: 50)
+        objectOfQueue.enqueue(element: 60)
+        print (objectOfQueue.dequeue())
+        print (objectOfQueue.dequeue())
+        print (objectOfQueue.dequeue())
+        print (objectOfQueue.dequeue())
+        print (objectOfQueue.dequeue())
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

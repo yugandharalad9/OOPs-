@@ -24,25 +24,30 @@ class Stack  {
     //Defining a function REMOVE to remove the last element out from the stack
     func remove() -> Int {
         // finding the last index of the stack
-        var lastIndex = elements.count
+        let lastIndex = elements.popLast()
         
         //removing and returning the last element from the stack
-        return elements.remove(at: (lastIndex-1))
+        return lastIndex!
     }
     
     init() {
+        //create an empty object of the type Array and assigned it to member variable "elements"
         elements = []
     }
     
-    
-    init(yesterdayNumbers: [Int] ) {
-        elements = yesterdayNumbers
-    }
-    
+    //Creating a function "printElementsOfTheStack" to print the elements in the stack
     func printElementsOfTheStack()  {
         print(elements)
     }
     
-    
+    //Creating a function to check if the stack is empty or not
+    func isEmpty() -> Bool {
+        
+        if elements.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
     
 }
